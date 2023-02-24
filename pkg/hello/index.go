@@ -1,7 +1,6 @@
 package hello
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -12,9 +11,7 @@ func Hello(c *gin.Context) {
 	if !ok {
 		name = "World"
 	}
-	c.Data(
-		http.StatusOK,
-		"text/plain",
-		[]byte(fmt.Sprintf("Hello %s!", name)),
-	)
+	c.HTML(http.StatusOK, "hello.html", gin.H{
+		"name": name,
+	})
 }
