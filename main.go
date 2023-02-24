@@ -8,7 +8,6 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.LoadHTMLGlob("web/templates/*")
 	r.GET("/hello", hello.Hello)
 	r.Run()
 }
