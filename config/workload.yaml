@@ -15,3 +15,7 @@ spec:
       url: https://github.com/iwaseyusuke/go-gin-demo
       ref:
         branch: main
+  build:
+    env:
+      - name: BP_KEEP_FILES
+        value: web/templates/*.html
